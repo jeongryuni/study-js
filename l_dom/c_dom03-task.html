@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>아이디 속성 선택 실습</title>
+        <p id="message"></p>
+    </head>
+    <body></body>
+    <script>
+        // "안녕하세요" 문구를 굵게 표시해서 p태그에 넣는다.
+
+        const pstrong = document.getElementById("message");
+        const text = "안녕하세요";
+        pstrong.innerHTML = `<strong>${text}</strong>`;
+    </script>
+</html>

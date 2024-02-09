@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>버튼 클릭 이벤트</title>
+    </head>
+    <body>
+        <button id="myButton">클릭하세요</button>
+        <p id="output"></p>
+    </body>
+    <script>
+        // 클릭
+        const text = "가나다라마바사";
+        const button = document.getElementById("myButton");
+        const ptext = document.querySelector("p");
+
+        button.addEventListener("click", (e) => {
+            ptext.innerHTML = `${text}`;
+        });
+
+        button.addEventListener("blur", () => {
+            button.style.width = "300px";
+        });
+
+        button.addEventListener("focus", () => {
+            button.style.height = "300px";
+        });
+
+        button.addEventListener("mouseover", () => {
+            button.style.backgroundColor = "red";
+        });
+
+        button.addEventListener("mouseout", () => {
+            button.style.backgroundColor = "blue";
+        });
+
+
+        .getElementsByClassName("클래스 네임")
+        .getElementById ("아이디 이름")
+        .querySelector("#id") or (태그 한 개)
+        .querySelectorAll ( 태그 여러개 )
+
+        객체를 동적으로 생성, 삽입, 삭제
+        createElement("태그명") 생성
+        appendChild("태그객체") 삽입
+        removeChild("태그객체") 삭제
+
+
+        preventDefault 태그의 디폴트 이벤트를 막음
+    </script>
+</html>

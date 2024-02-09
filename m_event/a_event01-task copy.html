@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클릭 이벤트 실습</title>
+    </head>
+    <body>
+        <form action="" name="join">
+            <div>
+                <input type="text" name="member-id" placeholder="아이디" />
+            </div>
+            <p id="id-message"></p>
+            <div>
+                <input
+                    type="passowrd"
+                    name="member-password"
+                    placeholder="비밀번호"
+                />
+            </div>
+            <p id="password-message"></p>
+            <button type="button">검사</button>
+        </form>
+    </body>
+    <script>
+        // 검사 버튼 클릭 시 아래 로직 진행
+        // 아이디를 검사
+        // 1. 아이디가 입력되지 않았을 때 적절한 메세지를 id-message에 빨간색으로 작성
+        // 2. 아이디가 입력되었을 때 적절한 메세지를 id-message에 녹색으로 작성
+
+        const button = document.querySelector("button[type='button']");
+        const messageId = document.getElementById("id-message");
+
+        button.addEventListener("click", (a) => {
+            if (!document.join["member-id"].value) {
+                messageId.innerText = "입력ㄴㄴ";
+                messageId.style.color = "red";
+                return;
+            }
+            messageId.innerText = "입력 ㅇㅇ";
+            messageId.style.color = "green";
+        });
+
+        // 비밀번호를 검사
+        // 1. 비밀번호가 입력되지 않았을 때 적절한 메세지를 password-message에 빨간색으로 작성
+        // 2. 비밀번호가 입력되었을 때 적절한 메세지를 password-message에 녹색으로 작성
+
+        const messagePW = document.getElementById("password-message");
+
+        // 버튼을 클릭하였을때 join안에 "member-password"의 값이 없다면
+        // innerText로 messagePW에 값을 넣어 입력x라는 문구가 뜨게함
+        // messagePw에 글자색 red를 줌
+        button.addEventListener("click", (a) => {
+            if (!document.join["member-password"].value) {
+                messagePW.innerText = "입력x";
+                messagePW.style.color = "red";
+                return;
+            }
+            // 값이 들어있다면,
+            // 입력o라는 문구가 뜨게함
+            // 글자색을 초록으로 바꿈
+            messagePW.innerText = "입력o";
+            messagePW.style.color = "green";
+        });
+    </script>
+</html>

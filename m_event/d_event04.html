@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>키 이벤트</title>
+    </head>
+    <body>
+        <input type="text" placeholder="이름" autocomplete="off" />
+        <p id="name"></p>
+    </body>
+    <script>
+        // input[placeholder=이름] 를 찾아오고 input에 담음
+        // p태그의 name을 찾아 p에 담음
+        const input = document.querySelector("input[placeholder=이름]");
+        const p = document.querySelector("#name");
+
+        // key를 떼면 바로 p태그에 이벤트 객체를 통해 이벤트를 발생시킨 객체의 값을 .
+        input.addEventListener("keyup", (e) => {
+            console.log(e.keyCode);
+            p.innerText = e.target.value;
+        });
+    </script>
+</html>
